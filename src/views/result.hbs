@@ -1,0 +1,29 @@
+<div class="container p-5">
+	<div class="alert alert-warning" role="alert">
+  		<h2>You got {{result}} answers right!!!</h2>
+	</div>
+
+	<div class="card">
+		<div class="card-body">
+			<ol>
+				{{#each hits}}
+				<li>{{this}}<br></li>
+				{{/each}}
+				
+			</ol>
+			<ol>
+				{{#each questionMatched}}
+				<li><b>{{this}}</b></li>
+				{{/each}}
+				
+			</ol>
+		</div>
+	</div><br>
+
+	<div>
+		<a href="/logout" class="btn btn-danger">Logout</a>
+		<a href="/questions" class="btn btn-success m-3">Make a new quiz</a>
+	</div>
+	
+</div>
+

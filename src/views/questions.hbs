@@ -1,0 +1,37 @@
+<div class="container p-5">
+	<div class="row-fluid">
+		<a class="btn btn-warning btn-lg" href="login">Back</a>
+		<div class="alert alert-danger mt-3" role="alert">
+			<h5><b>Please answer all questions and select one choice per question only</b></h5>
+		</div>
+		<div class="card-group">
+			{{#each data}}
+				<div class="col-sm-4">
+					<div class="card-columns-fluid">
+						<div class="card m-3">
+							<div class="card-header">
+								<h5 class="card-title">{{this.question}}</h5>
+							</div>
+							<div class="card-body">
+								
+								<form action="/result" method="post" name="quizForm" id="quizForm">	
+									{{#each this.answersList}}
+									<div class="form-check">
+										
+										<input class="form-check-input" type="checkbox" name="answers" value="{{this}}" id="flexRadioDefault">
+										<label class="form-check-label" for="flexRadioDefault">
+										{{this}}
+										</label>
+									</div>
+		
+									{{/each}}
+							</div>
+						</div>
+							
+					</div>
+				</div>
+			{{/each}}
+			<button class="btn btn-info w-100" id="bSubmit" type="submit">Submit</button>
+		</form>		
+	</div>
+</div>
