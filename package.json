@@ -2,7 +2,7 @@
   "name": "trivial-app",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
 	"start": "node src/app.js"
   },
