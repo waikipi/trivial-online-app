@@ -8,7 +8,7 @@ import session from "express-session";
 import MongoStore from "connect-mongo";
 
 import "./config/passport.js";
-import indexRoutes from "./routes/routes.js";
+import indexRoutes from "./routes/routes";
 import database from './database';
 
 const app = express();
