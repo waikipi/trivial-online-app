@@ -8,7 +8,7 @@ import session from "express-session";
 import MongoStore from "connect-mongo";
 
 import "./config/passport.js";
-import indexRoutes from "./routes/routes";
+import router from "./routes/routes";
 import database from './database';
 
 const app = express();
@@ -50,7 +50,7 @@ app.use((req, res, next) => {
 	next();
   });
 // routes
-app.use(indexRoutes);
+app.use(router);
 
 app.listen(3000, () => {
 	console.log('Server listening on new port', 3000);
