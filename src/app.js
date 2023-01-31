@@ -11,6 +11,8 @@ import "./config/passport.js";
 import routes from "./routes/routes.js";
 import database from './database.js';
 
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 
 // settings
@@ -46,14 +48,14 @@ app.use((req, res, next) => {
 	res.locals.success_msg = req.flash("success_msg");
 	res.locals.error_msg = req.flash("error_msg");
 	res.locals.error = req.flash("error");
-	res.locals.user = req.user || null;
+	res.locals.usr = req.user || null;
 	next();
   });
 // routes
 app.use(routes);
-app.use(database);
-app.listen(process.env.PORT, () => {
-	console.log('Server listening on new port', process.env.PORT);
+
+app.listen(PORT, () => {
+	console.log('Server listening on new port', PORT);
 });
 
 export default app;
