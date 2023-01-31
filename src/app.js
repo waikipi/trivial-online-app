@@ -9,7 +9,7 @@ import MongoStore from "connect-mongo";
 
 import "./config/passport.js";
 import routes from "./routes/routes.js";
-//import database from './database.js';
+import database from './database.js';
 
 const app = express();
 
@@ -51,7 +51,7 @@ app.use((req, res, next) => {
   });
 // routes
 app.use(routes);
-
+app.use(database);
 app.listen(process.env.PORT, () => {
 	console.log('Server listening on new port', process.env.PORT);
 });
