@@ -9,7 +9,7 @@ import MongoStore from "connect-mongo";
 
 import "./config/passport.js";
 import routes from "./routes/routes.js";
-import database from './database';
+//import database from './database.js';
 
 const app = express();
 
