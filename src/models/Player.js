@@ -25,8 +25,9 @@ PlayerSchema.methods.matchPassword = async function (password) {
 
 export default model('Player', PlayerSchema);*/
 
-import pkg from 'mongoose'
-const {Schema, model} = pkg;
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
+
 import bcrypt from "bcryptjs";
 
 const PlayerSchema = Schema(
