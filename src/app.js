@@ -9,7 +9,7 @@ import MongoStore from "connect-mongo";
 
 import "./config/passport.js";
 import routes from "./routes/routes.js";
-import database from './database.js';
+//import database from './database.js';
 
 const PORT = process.env.PORT || 3000;
 
