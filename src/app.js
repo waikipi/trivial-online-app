@@ -1,4 +1,4 @@
-import path from "path";
+//import path from "path";
 import express from "express";
 import morgan from "morgan";
 import { create } from "express-handlebars";
@@ -6,16 +6,20 @@ import flash from "connect-flash";
 import passport from "passport";
 import session from "express-session";
 import MongoStore from "connect-mongo";
+import { dirname, join } from "path";
+import { fileURLToPath } from "url";
+
 
 import "./config/passport.js";
 import routes from "./routes/routes.js";
 //import database from './database.js';
 
-const PORT = process.env.PORT || 3000;
 
 const app = express();
-
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const PORT = process.env.PORT || 3000;
 // settings
+
 app.set("views", path.join(__dirname, "views"));
 app.engine(
   ".hbs",
