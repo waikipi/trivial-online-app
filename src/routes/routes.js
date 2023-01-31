@@ -1,7 +1,7 @@
 import request from 'request';
 import { Router } from "express";
 import passport from "passport";
-import Player from '../models/Player';
+import Player from '../models/Player.js';
 import { isAuthenticated } from '../helpers/auth';
 import Result from '../models/Result';
 
