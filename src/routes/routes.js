@@ -2,8 +2,8 @@ import request from 'request';
 import { Router } from "express";
 import passport from "passport";
 import Player from '../models/Player.js';
-import { isAuthenticated } from '../helpers/auth';
-import Result from '../models/Result';
+import { isAuthenticated } from '../helpers/auth.js';
+import Result from '../models/Result.js';
 
 const router = Router();
 
