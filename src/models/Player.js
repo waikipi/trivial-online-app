@@ -26,11 +26,11 @@ PlayerSchema.methods.matchPassword = async function (password) {
 export default model('Player', PlayerSchema);*/
 
 import mongoose from 'mongoose';
-const { Schema } = mongoose;
+//const { Schema } = mongoose;
 
 import bcrypt from "bcryptjs";
 
-const PlayerSchema = Schema(
+const PlayerSchema = new mongoose.Schema(
 	{
 		user: {type: String, trim: true, unique: true},
 		email: {type: String, trim: true, unique: true},
@@ -52,4 +52,4 @@ PlayerSchema.methods.matchPassword = async function (password) {
 
 };
 
-export default model('Player', PlayerSchema);
+export default mongoose.model('Player', PlayerSchema);
