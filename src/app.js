@@ -13,6 +13,7 @@ import { fileURLToPath } from "url";
 import "./config/passport.js";
 import routes from "./routes/routes.js";
 //import database from './database.js';
+import './database.js';
 
 
 const app = express();
@@ -20,12 +21,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT || 3000;
 // settings
 
-app.set("views", path.join(__dirname, "views"));
+app.set("views", join(__dirname, "views"));
 app.engine(
   ".hbs",
   create({
-    layoutsDir: path.join(app.get("views"), "layouts"),
-    partialsDir: path.join(app.get("views"), "partials"),
+    layoutsDir: join(app.get("views"), "layouts"),
+    partialsDir: join(app.get("views"), "partials"),
     defaulLayout: "main",
     extname: ".hbs",
   }).engine
@@ -40,7 +41,7 @@ app.use(
 	  secret: "secret",
 	  resave: true,
 	  saveUninitialized: true,
-	  store: MongoStore.create({ mongoUrl: 'mongodb://localhost:27017/trivial-app' })
+	  store: MongoStore.create({ mongoUrl: 'mongodb+srv://kroskydekellog:y8NjQC4RPNWzlsMA@fidmugal.x8gl0h8.mongodb.net/?retryWrites=true&w=majority' })
 	})
   );
 app.use(passport.initialize());
