@@ -1,4 +1,3 @@
-import path from "path";
 import express from "express";
 import morgan from "morgan";
 import { create } from "express-handlebars";
@@ -12,7 +11,6 @@ import { fileURLToPath } from "url";
 
 import "./config/passport.js";
 import routes from "./routes/routes.js";
-//import database from './database.js';
 import './database.js';
 
 
@@ -41,7 +39,7 @@ app.use(
 	  secret: "secret",
 	  resave: true,
 	  saveUninitialized: true,
-	  store: MongoStore.create({ mongoUrl: 'mongodb+srv://kroskydekellog:y8NjQC4RPNWzlsMA@fidmugal.x8gl0h8.mongodb.net/?retryWrites=true&w=majority' })
+	  store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI})
 	})
   );
 app.use(passport.initialize());
@@ -53,7 +51,7 @@ app.use((req, res, next) => {
 	res.locals.success_msg = req.flash("success_msg");
 	res.locals.error_msg = req.flash("error_msg");
 	res.locals.error = req.flash("error");
-	res.locals.usr = req.user || null;
+	res.locals.user = req.user || null;
 	next();
   });
 // routes
